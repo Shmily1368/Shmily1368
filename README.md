@@ -47,20 +47,26 @@ Explore public follows and activity through explainable information circles and 
 
 [Try the app ↗](https://zhihu-circle.vercel.app/) · Next.js / TypeScript
 
+**[ETW Behavior Detection](https://github.com/Shmily1368/etw-behavior-detection)**
+
+Windows ETW collection, call-stack feature extraction, and random-forest behavior classification from research implementations.
+
+[Explore the architecture ↗](https://github.com/Shmily1368/etw-behavior-detection/blob/main/docs/architecture.md) · C++ / Java
+
 </td>
 <td width="50%" valign="top">
 
 **Recent Development**
 
 <!-- recent-development:start -->
-<a href="https://github.com/Shmily1368/DailySecurity/commit/982d0942142d7e45184c4f67a0f9324a6ddb8135">chore(data): publish verified daily security snapshot</a><br>
-<sub>DailySecurity · 2026-10-30 · 982d094</sub>
+<a href="https://github.com/Shmily1368/etw-behavior-detection/commit/05ff0227953335dade5d9881262f0e79555ea1c0">Document successful cloud builds and verification scope [skip ci]</a><br>
+<sub>etw-behavior-detection · 2026-10-30 · 05ff022</sub>
 
-<a href="https://github.com/Shmily1368/DailySecurity/commit/e28b11868496b1ac22c9c58c57f29f677bea2613">fix(data): retain latest source files when model summaries are unavailable</a><br>
-<sub>DailySecurity · 2026-10-30 · e28b118</sub>
+<a href="https://github.com/Shmily1368/etw-behavior-detection/commit/7a03cc87d5874faee461726ca32a97be5eed7676">Publish the complete sanitized ETW research system</a><br>
+<sub>etw-behavior-detection · 2026-10-30 · 7a03cc8</sub>
 
-<a href="https://github.com/Shmily1368/DailySecurity/commit/513a47e3abfe7e683334ea6dae48b77b88819846">chore(data): publish verified daily security snapshot</a><br>
-<sub>DailySecurity · 2026-10-30 · 513a47e</sub>
+<a href="https://github.com/Shmily1368/DailySecurity/commit/d72268db56bd62904d95f79643b1b2d5e5fd2a3f">chore(data): publish verified daily security snapshot</a><br>
+<sub>DailySecurity · 2026-10-30 · d72268d</sub>
 <!-- recent-development:end -->
 
 </td>

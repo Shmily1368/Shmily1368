@@ -2,7 +2,8 @@
   "account": "Shmily1368",
   "repositories": [
     "Shmily1368/DailySecurity",
-    "Shmily1368/zhihu-circle"
+    "Shmily1368/zhihu-circle",
+    "Shmily1368/etw-behavior-detection"
   ],
   "limit": 3,
   "max_pages": 5
