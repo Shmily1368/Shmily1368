@@ -49,14 +49,14 @@ Explore public follows and activity through explainable information circles and 
 **Recent Development**
 
 <!-- recent-development:start -->
+<a href="https://github.com/Shmily1368/DailySecurity/commit/982d0942142d7e45184c4f67a0f9324a6ddb8135">chore(data): publish verified daily security snapshot</a><br>
+<sub>DailySecurity · 2026-10-30 · 982d094</sub>
+
+<a href="https://github.com/Shmily1368/DailySecurity/commit/e28b11868496b1ac22c9c58c57f29f677bea2613">fix(data): retain latest source files when model summaries are unavailable</a><br>
+<sub>DailySecurity · 2026-10-30 · e28b118</sub>
+
 <a href="https://github.com/Shmily1368/DailySecurity/commit/513a47e3abfe7e683334ea6dae48b77b88819846">chore(data): publish verified daily security snapshot</a><br>
 <sub>DailySecurity · 2026-10-30 · 513a47e</sub>
-
-<a href="https://github.com/Shmily1368/DailySecurity/commit/4bc99fa4299421a94cc4ea94991b11eda152bd3c">chore(data): publish verified daily security snapshot</a><br>
-<sub>DailySecurity · 2026-10-29 · 4bc99fa</sub>
-
-<a href="https://github.com/Shmily1368/DailySecurity/commit/7abf91b38f39d161fadbfc4a667e20547e0714f4">fix(osv): avoid retrying CVEs missing from the OSV index</a><br>
-<sub>DailySecurity · 2026-10-29 · 7abf91b</sub>
 <!-- recent-development:end -->
 
 </td>
