@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./profile/rei-shoreline.gif" width="100%" alt="Rei Ayanami by the shoreline">
+</p>
+
 <h1 align="center">Shmily1368</h1>
 
 <p align="center">
