@@ -83,9 +83,18 @@ def is_bot(user):
     )
 
 
-def english_title(commit, sha, account):
+def commit_title(commit):
     lines = commit.get("message", "").splitlines()
     title = lines[0].strip() if lines else ""
+    title = re.sub(
+        r"\[(?:skip ci|ci skip|no ci|skip actions|actions skip)\]",
+        "", title, flags=re.IGNORECASE,
+    )
+    return " ".join(title.split())
+
+
+def english_title(commit, sha, account):
+    title = commit_title(commit)
     names = [
         (commit.get(role) or {}).get("name", "").strip()
         for role in ("author", "committer")
@@ -96,7 +105,6 @@ def english_title(commit, sha, account):
         for name in names
     )
     if title and title.isascii() and not exposes_name:
-        title = " ".join(title.split())
         return title if len(title) <= 88 else title[:85].rstrip() + "..."
     prefix = re.match(r"^([a-z]+)(?:\([^)]*\))?!?:", title, re.IGNORECASE)
     category = FALLBACKS.get(prefix.group(1).lower(), "Code update") if prefix else "Code update"
@@ -105,6 +113,7 @@ def english_title(commit, sha, account):
 
 def collect_entries(config, token):
     entries = {}
+    topics = {}
     for repository in config["repositories"]:
         for page in range(1, config["max_pages"] + 1):
             rows = request_commits(repository, config["account"], page, token)
@@ -132,14 +141,30 @@ def collect_entries(config, token):
                     "title": english_title(commit, sha, config["account"]),
                     "committed_at": timestamp.astimezone(timezone.utc).isoformat().replace("+00:00", "Z"),
                 }
+                # Compare full source titles before display truncation or translation.
+                topics[key] = commit_title(commit) or sha
             if len(rows) < 100:
                 break
         # Every configured repository must succeed before any README is written.
-    return sorted(
+    ordered = sorted(
         entries.values(),
         key=lambda entry: (entry["committed_at"], entry["repository"], entry["sha"]),
         reverse=True,
-    )[:config["limit"]]
+    )
+    selected = []
+    seen = set()
+    for entry in ordered:
+        topic = (
+            entry["repository"].casefold(),
+            topics[(entry["repository"], entry["sha"])],
+        )
+        if topic in seen:
+            continue
+        seen.add(topic)
+        selected.append(entry)
+        if len(selected) == config["limit"]:
+            break
+    return selected
 
 
 def replace_section(readme, entries):
@@ -155,8 +180,7 @@ def replace_section(readme, entries):
         repo = html.escape(entry["repository"].split("/", 1)[1], quote=True)
         blocks.append(
             '<a href="' + entry["url"] + '">' + title + "</a><br>\n"
-            "<sub>" + repo + " · " + entry["committed_at"][:10]
-            + " · " + entry["sha"][:7] + "</sub>"
+            "<sub>" + repo + " · " + entry["committed_at"][:10] + "</sub>"
         )
     return readme[:start] + "\n" + "\n\n".join(blocks) + "\n" + readme[end:]
 

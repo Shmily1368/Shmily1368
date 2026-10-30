@@ -59,15 +59,26 @@ Windows ETW collection, call-stack feature extraction, and random-forest behavio
 **Recent Development**
 
 <!-- recent-development:start -->
-<a href="https://github.com/Shmily1368/etw-behavior-detection/commit/05ff0227953335dade5d9881262f0e79555ea1c0">Document successful cloud builds and verification scope [skip ci]</a><br>
-<sub>etw-behavior-detection · 2026-10-30 · 05ff022</sub>
+<a href="https://github.com/Shmily1368/etw-behavior-detection/commit/05ff0227953335dade5d9881262f0e79555ea1c0">Document successful cloud builds and verification scope</a><br>
+<sub>etw-behavior-detection · 2026-10-30</sub>
 
 <a href="https://github.com/Shmily1368/etw-behavior-detection/commit/7a03cc87d5874faee461726ca32a97be5eed7676">Publish the complete sanitized ETW research system</a><br>
-<sub>etw-behavior-detection · 2026-10-30 · 7a03cc8</sub>
+<sub>etw-behavior-detection · 2026-10-30</sub>
 
 <a href="https://github.com/Shmily1368/DailySecurity/commit/d72268db56bd62904d95f79643b1b2d5e5fd2a3f">chore(data): publish verified daily security snapshot</a><br>
-<sub>DailySecurity · 2026-10-30 · d72268d</sub>
+<sub>DailySecurity · 2026-10-30</sub>
+
+<a href="https://github.com/Shmily1368/DailySecurity/commit/e28b11868496b1ac22c9c58c57f29f677bea2613">fix(data): retain latest source files when model summaries are unavailable</a><br>
+<sub>DailySecurity · 2026-10-30</sub>
+
+<a href="https://github.com/Shmily1368/DailySecurity/commit/7abf91b38f39d161fadbfc4a667e20547e0714f4">fix(osv): avoid retrying CVEs missing from the OSV index</a><br>
+<sub>DailySecurity · 2026-10-29</sub>
+
+<a href="https://github.com/Shmily1368/DailySecurity/commit/8bea7d8fa36401e5cba87f069c3f0c03f8c0fa79">fix(ci): generate Astro declarations before clean type checks</a><br>
+<sub>DailySecurity · 2026-10-29</sub>
 <!-- recent-development:end -->
+
+[More activity ↗](https://github.com/Shmily1368?tab=overview#js-contribution-activity)
 
 </td>
 </tr>
