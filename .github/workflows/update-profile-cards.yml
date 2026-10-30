@@ -1,0 +1,48 @@
+name: Update profile cards
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 20 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-updates
+  cancel-in-progress: false
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Generate light stats card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&custom_title=GitHub%20Stats&show_icons=true&hide_border=true&theme=swift
+          path: profile/stats-light.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      - name: Generate dark stats card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&custom_title=GitHub%20Stats&show_icons=true&hide_border=true&theme=swift&bg_color=161b22&title_color=e6edf3&text_color=e6edf3&icon_color=ff6b4a&ring_color=e6edf3
+          path: profile/stats-dark.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      - name: Commit updated cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/stats-light.svg profile/stats-dark.svg
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "chore(profile): refresh public stats cards"
+          git push
