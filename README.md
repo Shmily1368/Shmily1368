@@ -59,8 +59,8 @@ Windows ETW collection, call-stack feature extraction, and random-forest behavio
 **Recent Development**
 
 <!-- recent-development:start -->
-<a href="https://github.com/Shmily1368/DailySecurity/commit/e01a9d4c5f5a393d4ab7209dcf61c05603dbf8a7">chore(data): publish verified daily security snapshot</a><br>
-<sub>DailySecurity · 2026-11-15</sub>
+<a href="https://github.com/Shmily1368/DailySecurity/commit/2af473e310222eb1bb8cdee1fe815989120d0351">chore(data): publish verified daily security snapshot</a><br>
+<sub>DailySecurity · 2026-11-16</sub>
 
 <a href="https://github.com/Shmily1368/etw-behavior-detection/commit/05ff0227953335dade5d9881262f0e79555ea1c0">Document successful cloud builds and verification scope</a><br>
 <sub>etw-behavior-detection · 2026-10-30</sub>
